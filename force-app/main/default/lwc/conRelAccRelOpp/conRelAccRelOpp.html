@@ -1,0 +1,60 @@
+<template>
+    <lightning-card >
+        <div class="title">
+            Contact Information
+        </div>
+    
+        <div class="slds-grid slds-wrap">
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium" >
+            <div class="slds-form-element">
+                  <b>Contact Name</b> : {contactName}
+                </div>
+            </div>
+
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                <div class="slds-form-element">
+                    <b>Contact Email</b> : {contactEmail}
+                </div>
+            </div>
+    
+            <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+            <div class="slds-form-element">
+                    <b>Account Name</b> : {accountName}
+                </div>
+            </div>
+        </div>
+
+    <div class="slds-m-around_xx-small">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Parent Account">Opportunity Name</div>
+              </th>
+
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Parent Account">Opportunity StageName</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={data} for:item="keyValue">
+                <tr key={keyValue.Id}>
+                   
+                    <td scope="col">
+                        <div>{keyValue.oppName} </div>
+                        <!-- &nbsp;&nbsp;&nbsp; {con.Email}</div> -->
+                    </td>
+                    <td scope="col">
+                        <div>{keyValue.oppStageName} </div>
+                    <!-- &nbsp;&nbsp;&nbsp; {con.Email}</div> -->
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+<br/>
+<br/>
+  </div>
+    </lightning-card>
+</template>
